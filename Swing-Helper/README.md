@@ -1,4 +1,4 @@
-# Swing
+# Swing-Helper
 Pequeno projeto em Java Swing.
 
 ## Resultados
