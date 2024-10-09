@@ -7,7 +7,7 @@ public class Components {
 
         // Criando o JFrame
         JFrame frame = new JFrame("Exemplo de JProgressBar");
-        frame.setSize(400, 200);
+        frame.setSize(500, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
@@ -29,7 +29,27 @@ public class Components {
         progressBar.setStringPainted(true); // Exibe o percentual no progresso
 
         // Adicionando o JProgressBar ao JFrame
-        frame.add(progressBar, BorderLayout.CENTER); // Colocando a barra de progresso no centro
+        //frame.add(progressBar, BorderLayout.CENTER); // Colocando a barra de progresso no centro
+
+        // Painel esquerdo com a barra de progresso
+        JPanel painelEsquerdo = new JPanel();
+        painelEsquerdo.setLayout(new BorderLayout());
+        painelEsquerdo.add(progressBar, BorderLayout.CENTER);
+        painelEsquerdo.add(new JLabel("Painel Esquerdo"), BorderLayout.NORTH);
+
+        // Painel direito com uma área de texto
+        JPanel painelDireito = new JPanel();
+        painelDireito.setLayout(new BorderLayout());
+        JTextArea areaTexto = new JTextArea("Aqui você pode adicionar texto.");
+        painelDireito.add(new JScrollPane(areaTexto), BorderLayout.CENTER);
+        painelDireito.add(new JLabel("Painel Direito"), BorderLayout.NORTH);
+
+        // Criando o JSplitPane para dividir os dois painéis
+        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, painelEsquerdo, painelDireito);
+        splitPane.setDividerLocation(250); // Posição inicial do divisor (em pixels)
+
+        // Adicionando o JSplitPane ao JFrame
+        frame.add(splitPane, BorderLayout.CENTER);
 
         // Exibindo o JFrame
         frame.setVisible(true);
