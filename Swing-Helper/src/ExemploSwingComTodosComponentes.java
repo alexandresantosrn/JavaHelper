@@ -24,10 +24,10 @@ public class ExemploSwingComTodosComponentes {
 
         // 2. Criando o JPanel esquerdo com JProgressBar e JLabel
         JPanel painelEsquerdo = new JPanel(new BorderLayout());
+        JLabel labelEsquerdo = new JLabel("Painel Esquerdo");
         JProgressBar progressBar = new JProgressBar(0, 100);
         progressBar.setValue(50);
         progressBar.setStringPainted(true);
-        JLabel labelEsquerdo = new JLabel("Painel Esquerdo");
         painelEsquerdo.add(labelEsquerdo, BorderLayout.NORTH);
         painelEsquerdo.add(progressBar, BorderLayout.CENTER);
 
